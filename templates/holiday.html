@@ -1,0 +1,377 @@
+{% include "index.html" %}
+<style>
+    .box1 {
+        display: none;
+    }
+
+    .heading {
+        justify-content: center;
+        text-align: center;
+        padding: 2px 30px;
+    }
+
+    .qry {
+        width: 100%;
+        border: none;
+        box-sizing: border-box;
+        box-shadow: #b7ebff;
+
+        padding: 4px 10px;
+        margin: 10px 0px;
+        border-radius: 20px;
+    }
+
+    .slide {
+        height: 500px !important;
+        margin: 20px;
+        border-radius: 30px!important;
+    }
+    
+    .slide img {
+        border-radius: 30px!important;
+        height: 400px;
+    }
+
+    .outer_sec {
+        background-image: url('https://images.unsplash.com/photo-1559456751-057ed03f3143?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1802&q=80');
+        -webkit-animation: bgcolorchange 4s infinite;
+        /* Chrome, Safari, Opera */
+        animation: 4s infinite bgcolorchange;
+    }
+
+    @keyframes bgcolorchange {
+        0% {
+            background-color: rgb(139, 247, 223);
+        }
+
+        25% {
+            background-color: rgb(84, 173, 196);
+        }
+
+        50% {
+            background-color: rgb(43, 175, 199);
+        }
+
+        75% {
+            background-color: #b7ebff;
+        }
+
+        100% {
+            background-color: rgb(56, 183, 192);
+        }
+    }
+
+    /* Chrome, Safari, Opera 
+       @-webkit-keyframes bgcolorchange {
+            0%   {background: red;}
+            25%  {background: yellow;}
+            75%  {background: green;}
+            100% {background: blue;}
+       }
+       */
+    .btn {
+        width: 200px;
+        border: 1px solid black;
+        border-radius: 20px;
+    }
+
+    .btn:hover {
+        background-color: aqua;
+
+    }
+
+    .bot_sec {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin: 10px;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .bot_sec div {
+        margin: 10px;
+    }
+    
+    .headl {
+        width: 100%;
+    }
+    
+    html {
+        scroll-behavior: smooth;
+    }
+    .holi_div{
+        border: 1px solid red;
+        width: 300px;
+    }
+
+    
+    .holi_div img{
+        z-index: 1;
+        border-radius: 10px;
+        width: 250px;
+    }
+    .box_for_bus{
+        display: flex;
+        margin: 10px;
+        padding: 10px;
+        justify-content: center;
+        border: 1px solid black ;
+    }
+</style>
+
+<body>
+    <section class="outer_sec">
+
+        <div class="heading autocomplete">
+            <h3 style="color: beige;"> Looking for a ideal Vacation </h3>
+            <form autocomplete="off" action="#" method="post">
+                {% csrf_token %}
+                <!-- <div class="autocomplete" style="width:300px;"> -->
+                <!-- <input id="myInput" type="text" name="myCountry" placeholder="Country"> -->
+                <!-- </div> -->
+                <input type="search" name="qry" class="qry" id="myInput" placeholder="Search Location">
+                <!-- <input class='btn' type="submit" name="Search" > -->
+                <button class='btn' type="submit" name="Search">Search</button>
+                <br>
+                <a href="#vacation">See Results</a>
+            </form>
+        </div>
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://images.unsplash.com/photo-1507539989371-99615e449486?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=962&q=80"
+                        class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Laughter is an instant vacation</h5>
+                        <p>Some of your best ideas come when you're on vacation.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://images.unsplash.com/photo-1475503572774-15a45e5d60b9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+                        class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Life is better in flip flops</h5>
+                        <p>A vacation is having nothing to do and all day to do it in.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://images.unsplash.com/photo-1447501614729-24781f73c2f1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80"
+                        class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Laughter is an instant vacation</h5>
+                        <p>Some of your best ideas come when you're on vacation.</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        <section class="bot_sec" id="vacation">
+            <div class="headl">
+
+                <h3>Holiday Packages {{city_name}}</h3>
+            </div>
+            {% for item in Tour_plan1 %}
+            <div class="holi_div">
+                <h5>{{item.City}}</h5>
+                <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" class="imgh" alt="img">
+                <h6><b>Price: {{item.package}}$</b></h6>
+                <h6><b>Food:
+                    {% if item.food == True %}
+                    Free
+                    {% else %}
+                    Extra Charge
+                    {% endif %}
+
+                </b></h6>
+
+                <p>
+                    <a href="{{item.get_absolute_url}}">See Details</a>
+                    <!-- <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                      Button with data-bs-target
+                    </button> -->
+                </p>
+                <div class="collapse" id="collapseExample">
+                    <div class="card card-body">
+                        {{item.desc}}
+                    </div>
+                </div>
+
+                
+
+
+            </div>
+            {% endfor %}
+
+        </section>
+        <section class="box_for_bus">
+            <div>
+                <h1>We Also Provide Transpotation 
+                    
+                    <img src="https://media3.giphy.com/media/cYZFmDxvAxvCU/giphy.gif?cid=ecf05e47qidxogbte5ul4r3s9cngxcj3s82uxpn4y9h9ombp&rid=giphy.gif&ct=g" width="50px" alt="">
+                </h1>
+            </div>
+            <div class="inner_box_for_bus" >
+
+
+            </div>
+        </section>
+    </section>
+    <script>
+        function autocomplete(inp, arr) {
+            /*the autocomplete function takes two arguments,
+            the text field element and an array of possible autocompleted values:*/
+            var currentFocus;
+            /*execute a function when someone writes in the text field:*/
+            inp.addEventListener("input", function (e) {
+                var a, b, i, val = this.value;
+                /*close any already open lists of autocompleted values*/
+                closeAllLists();
+                if (!val) { return false; }
+                currentFocus = -1;
+                /*create a DIV element that will contain the items (values):*/
+                a = document.createElement("DIV");
+                a.setAttribute("id", this.id + "autocomplete-list");
+                a.setAttribute("class", "autocomplete-items");
+                /*append the DIV element as a child of the autocomplete container:*/
+                this.parentNode.appendChild(a);
+                /*for each item in the array...*/
+                for (i = 0; i < arr.length; i++) {
+                    /*check if the item starts with the same letters as the text field value:*/
+                    if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+                        /*create a DIV element for each matching element:*/
+                        b = document.createElement("DIV");
+                        /*make the matching letters bold:*/
+                        b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+                        b.innerHTML += arr[i].substr(val.length);
+                        /*insert a input field that will hold the current array item's value:*/
+                        b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+                        /*execute a function when someone clicks on the item value (DIV element):*/
+                        b.addEventListener("click", function (e) {
+                            /*insert the value for the autocomplete text field:*/
+                            inp.value = this.getElementsByTagName("input")[0].value;
+                            /*close the list of autocompleted values,
+                            (or any other open lists of autocompleted values:*/
+                            closeAllLists();
+                        });
+                        a.appendChild(b);
+                    }
+                }
+            });
+            /*execute a function presses a key on the keyboard:*/
+            inp.addEventListener("keydown", function (e) {
+                var x = document.getElementById(this.id + "autocomplete-list");
+                if (x) x = x.getElementsByTagName("div");
+                if (e.keyCode == 40) {
+                    /*If the arrow DOWN key is pressed,
+                    increase the currentFocus variable:*/
+                    currentFocus++;
+                    /*and and make the current item more visible:*/
+                    addActive(x);
+                } else if (e.keyCode == 38) { //up
+                    /*If the arrow UP key is pressed,
+                    decrease the currentFocus variable:*/
+                    currentFocus--;
+                    /*and and make the current item more visible:*/
+                    addActive(x);
+                } else if (e.keyCode == 13) {
+                    /*If the ENTER key is pressed, prevent the form from being submitted,*/
+                    e.preventDefault();
+                    if (currentFocus > -1) {
+                        /*and simulate a click on the "active" item:*/
+                        if (x) x[currentFocus].click();
+                    }
+                }
+            });
+            function addActive(x) {
+                /*a function to classify an item as "active":*/
+                if (!x) return false;
+                /*start by removing the "active" class on all items:*/
+                removeActive(x);
+                if (currentFocus >= x.length) currentFocus = 0;
+                if (currentFocus < 0) currentFocus = (x.length - 1);
+                /*add class "autocomplete-active":*/
+                x[currentFocus].classList.add("autocomplete-active");
+            }
+            function removeActive(x) {
+                /*a function to remove the "active" class from all autocomplete items:*/
+                for (var i = 0; i < x.length; i++) {
+                    x[i].classList.remove("autocomplete-active");
+                }
+            }
+            function closeAllLists(elmnt) {
+                /*close all autocomplete lists in the document,
+                except the one passed as an argument:*/
+                var x = document.getElementsByClassName("autocomplete-items");
+                for (var i = 0; i < x.length; i++) {
+                    if (elmnt != x[i] && elmnt != inp) {
+                        x[i].parentNode.removeChild(x[i]);
+                    }
+                }
+            }
+            /*execute a function when someone clicks in the document:*/
+            document.addEventListener("click", function (e) {
+                closeAllLists(e.target);
+            });
+        }
+
+        /*An array containing all the country names in the world:*/
+        var countries = ["Andaman and Nicobar Islands",
+            "Andhra Pradesh",
+            "Arunachal Pradesh",
+            "Assam",
+            "Bihar",
+            "Chandigarh",
+            "Chhattisgarh",
+            "Dadra and Nagar Haveli",
+            "Daman and Diu",
+            "Delhi",
+            "Goa",
+            "Gujarat",
+            "Haryana",
+            "Himachal Pradesh",
+            "Jammu and Kashmir",
+            "Jharkhand",
+            "Karnataka",
+            "Kerala",
+            "Lakshadweep",
+            "Madhya Pradesh",
+            "Maharashtra",
+            "Manipur",
+            "Meghalaya",
+            "Mizoram",
+            "Nagaland",
+            "Odisha",
+            "Puducherry",
+            "Punjab",
+            "Rajasthan",
+            "Sikkim",
+            "Tamil Nadu",
+            "Telangana",
+            "Tripura",
+            "Uttar Pradesh",
+            "Uttarakhand",
+            "West Bengal"];
+
+        /*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
+        autocomplete(document.getElementById("myInput"), countries);
+    </script>
+</body>

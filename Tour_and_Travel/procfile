@@ -1,0 +1,1 @@
+web: gunicorn Tour_and_Travel.wsgi

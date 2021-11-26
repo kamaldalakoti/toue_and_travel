@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<style>
+    .box1{
+        display: none;
+    }
+</style>
+{% include "index.html" %}  
+
+<body>
+<style>
+    .box1{
+        display: none;
+    }
+    .bus_sec{
+        background-image : url('https://images.unsplash.com/photo-1593417376544-4c4201061e22?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1925&q=80');
+        height: 100%;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-position: 0px;
+        background-size: cover;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 10px;
+
+    }
+    .bus_sec div{
+        border: 2px solid black;
+        width: 350px;
+        height: 350px;
+        margin: 10px;
+    }
+    .top_sec{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        background-color: #d1dbe0;
+    }
+    .top_sec span{
+        border: 1px solid black;
+        padding: 0px 20px;
+        background: transparent;
+    }
+</style>
+{% block 'body' %}
+<section class="top_sec">
+    <span><h1>This is head line</h1></span>
+</section>
+<section class="bus_sec">
+    <div>
+        <h1>helo{{From}}</h1>
+    </div>
+    <div>
+        <h1>helo</h1>
+    </div>
+    <div>
+        <h1>helo</h1>
+    </div>
+    <div>
+        <h1>helo</h1>
+    </div>
+    <div>
+        <h1>helo</h1>
+    </div>
+    <div>
+        <h1>helo</h1>
+    </div>
+    <div>
+        <h1>helo</h1>
+    </div>
+    <div>
+        <h1>helo</h1>
+    </div>
+    <div>
+        <h1>helo</h1>
+    </div>
+    <div>
+        <h1>helo</h1>
+    </div>
+    <div>
+        <h1>helo</h1>
+    </div>
+    <div>
+        <h1>helo</h1>
+    </div>
+    <div>
+        <h1>helo</h1>
+    </div>
+    <div>
+        <h1>helo</h1>
+    </div>
+
+</section>
+
+{% endblock %}
+</body>
