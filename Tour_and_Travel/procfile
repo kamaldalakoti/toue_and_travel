@@ -1,1 +1,1 @@
-web: gunicorn Home.wsgi --log--
+web: gunicorn Tour_and_Travel.wsgi --log--
